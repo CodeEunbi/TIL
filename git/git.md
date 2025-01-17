@@ -19,3 +19,19 @@
 ---
 ## git의 영역
 - Working Directory : 그냥 파일, 아직 프로젝트의 일부X(물리적으로만 존재)
+- Staging Area 
+  - 추가될 파일, 실제로 프로젝트 버전에 일부분에 들어갈 파일
+  - Working Directory에서 변경된 파일 중, 다음 버전에포함시킬 파일들을 추가하거나 제외할 수 있는 중간 영역
+- Repositary(저장소) 
+  - 버전에 추가 된 파일, 변경사항이 있는 파일을 다시 Working Directory, 변경사항이라는 파일이 생김
+  - 버전 이력과 파일들이 영구적으로 저장된느 영역, 모든 버전과 변경 이력이 기록
+
+  ### commit(기여하다, 저장, 버전)
+  - 변경된 파일들을 저장하는 행위이며, 마치 사진을 찍듯이 기록한다 하여 'snap shot'이라고도 함
+  - local repository에 저장
+
+  ## git 명령어
+  - git init : 저장소를 초기화
+  - git status 
+    - 어떤 파일이 tracked 되고 있지 않은지 나옴.
+    - Working Directory(버전으로 인식하지 않음)

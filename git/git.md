@@ -35,3 +35,41 @@
   - git status 
     - 어떤 파일이 tracked 되고 있지 않은지 나옴.
     - Working Directory(버전으로 인식하지 않음)
+  - git add  파일명 : Staging Area로 넘어감, 다음버전에 추가가 될 파일
+- git commit -m (”~”): ~ 메세지를 남기겠다>한 번에 되지 않음(프로젝트 내용같은거)
+- git config --global user.email(name) : 이메일, 이름 설정
+(이름, 이메일 설정 후 git commit -m 하기)
+
+- git log : 여태 한 걸 기록으로 확인
+- git log --oneline : git log를 압축해서
+
+- 로컬 저장소 내 모든 파일의 ‘변경사항’을 감시
+
+- git remote add (이름(origin)) 주소 추가
+  - git remote seturl
+
+- git geturl>확인
+
+ - -u > user
+
+- git push (-u) origin master : 원격저장소에 commit을 업로드
+- push : 내가 가진 걸 줌/ -u, - - set-up stream
+- pull : 내가 받음(clone)
+- git clone > 복제/ 서로 다른 두 개발자가 참여할 수 있음
+
+- git revert 페이지 번호(git log  - -oneline하면 나오는)vim이 나옴
+- git revert에서도 conflict > 과거의 영향을 받음
+  - git commit -m “merge conflict”으로 해소
+
+- git reset[옵션] <commit id>
+
+- —soft, —hard, —mixed
+
+**[git init 주의 사항]**
+
+- git 로컬 저장소 내에 또다른 git 로컬 저장소를 만들지 말 것
+  - 이미 git 로컬 저장소인 디렉토리 내부 하단에서 git init 명령어를 다시 입력하지 말것
+  - git 저장소 안에 git 저장소가 있을 경우 가장 바깥 쪽의 git 저장소가 안쪽의 git 변경사항을 추적할 수 없기 때문
+
+
+*ammend > commit 메세지 수정, 전체 수정

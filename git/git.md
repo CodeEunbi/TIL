@@ -73,3 +73,43 @@
 
 
 *ammend > commit 메세지 수정, 전체 수정
+
+## Remote Repositary
+
+- 코드와 버전 관리 이력을 **온라인 상의 특정 위치에 저장**하여 여러 개발자가 협업하고 코드를 공유할 수 있는 공간 >> git hub, git lab, bitbucket
+
+git push (-u) origin master : 원격저장소에 commit을 업로드
+
+### local과 github
+
+- push : 내가 가진 걸 줌/ -u, - - set-up stream
+- pull : 내가 받음(clone)
+
+- git은 commit  단위로 기억
+  - commit 이력이 없다면 push 할 수 없다
+
+- pull/clone
+
+- git clone > 복제/ 서로 다른 두 개발자가 참여할 수 있음
+
+### gitignore 주의 사항
+- 이미 git의 관리를 받은 이력이 있는 파일이나 디렉토리는 나중에 gitignore에 작성해도 적용되지 않음
+
+- git rm -- cached 명령어를 통해 git 캐시 삭제 필요
+
+### commit
+local repository 에 저장
+
+### push
+- local > remote repository로 보내기
+
+### clone
+
+- 원격 저장소 전체를 복제(다운로드) 
+
+***conflict- 2가지가 공존할 수 없는 상황**
+
+수정해서 저장하고
+git add 하고 git commit -m “merge conflict, keep ~~~~”으로 해소
+git push
+후 다른 vscode에서 git pull

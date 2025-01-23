@@ -15,6 +15,20 @@ list_of_book = [
     '옥련몽',
 ]
 
+# looking_for = '옥련몽'
+found = False 
+
+# for owned in list_of_book:
+#     if owned == looking_for:
+#         # print('있다!')
+#         found = True
+
+# if found:
+#     print('있다!')
+# else:
+#     print('없다..')
+    
+    
 rental_list = [
     '장생전',
     '원생몽유록',
@@ -27,8 +41,7 @@ rental_list = [
     '만복자서포기',
 ]
 
-
-
+#나
 is_possible = True
 for i in rental_list:
     if i not in list_of_book:
@@ -39,3 +52,33 @@ for i in rental_list:
 if is_possible:
     print('모든 도서가 대여 가능합니다.')
     
+# print(is_possible)    
+#  for i in [i for i in rental_list if i not in list_of_book]:
+#      print(f'{i} 은/는 보유하고 있지 않습니다.')
+
+#강사님
+#책찾기
+# good_to_go = True
+# for rental in rental_list:
+#     found = False
+#     for book in list_of_book:
+#         if book == rental:
+#             found = True
+#             break
+# #     #책이 없으면
+# #     if not found :
+# #         print(f'{rental} 은/는 보유하고 있지 않습니다.')
+# #         good_to_go = False
+# #  #책이 있으면
+# # if good_to_go:
+# #     print('모든 도서가 대여 가능한 상태입니다.')
+    
+    
+    
+# if rental not in list_of_book:
+#     print(f'{rental} 은/는 보유하고 있지 않습니다.')
+#     good_to_go = False
+    
+# if good_to_go:
+#     print('모든 도서가 대여 가능한 상태입니다.')
+

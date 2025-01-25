@@ -91,7 +91,7 @@ git push (-u) origin master : 원격저장소에 commit을 업로드
 - pull/clone
 
 - git clone > 복제/ 서로 다른 두 개발자가 참여할 수 있음
-- git clone 후 파일 생성된 거 확인하기
+- git clone 후 파일 생성된 거 확인하기 
 
 ### gitignore 주의 사항
 - 이미 git의 관리를 받은 이력이 있는 파일이나 디렉토리는 나중에 gitignore에 작성해도 적용되지 않음

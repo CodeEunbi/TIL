@@ -67,7 +67,7 @@ print(sum(range(3)))   #TypeError: 'int' object is not callable
 
 - 변수의 스코프를 전역범위로 지정하기 위해 사용
 - 일반적으로 함수 내에서 전역 변수를 수정하려는 경우에 사용
-
+- 전역변수라고 지정
 ```python
 num = 0  #전역변수
 

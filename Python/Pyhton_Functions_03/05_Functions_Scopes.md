@@ -8,8 +8,8 @@
 
 ### scope
 
-- global scope : 코드 어디에서든 참조할 수 있는 공간
-- local scope : 함수가 만든 scope(함수 내부에서만 참조 가능)
+- global scope(전역변수) : 코드 어디에서든 참조할 수 있는 공간
+- local scope(지역변수) : 함수가 만든 scope(함수 내부에서만 참조 가능)
 
 ### variable
 
@@ -104,3 +104,6 @@ def increment(num):
 		global num
 		num +=1
 ```
+
+## 메모리 주소
+- 이미 주소가 있는 메모리에 이름만 붙임

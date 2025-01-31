@@ -1,5 +1,4 @@
 import requests
-import pprint
 
 #서울위 위도
 lat = 37.56

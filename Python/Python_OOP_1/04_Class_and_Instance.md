@@ -35,9 +35,15 @@ class Person:
 
     def introduce(self):
         print(f'안녕하세요. 저는 {self.name}, 나이는 {self.age}살입니다.')
+
+    p1 = Person('Alice', 25)
+    p1.introduce() #안녕하세요. 저는 Alice, 나이는 25살입니다.
+
+    p2 = Person('Bella', 30)
+    p2.introduce() #안녕하세요. 저는 Bella, 나이는 30살입니다.
         
      # Person('Alice', 25)라고 하면 Person이라는 설계도로부터 이름이 Alice이고 나이가 25인 '사람 객체'
-     #p1, p2는 다름(코드 작성)
+     #p1, p2는 다름
 
 ```
 
@@ -65,7 +71,7 @@ upper → str이라는 클래스 안에 있는 인스턴스
 
 ## 클래스 구성요소
 
-### 클래수 구조 _ 01
+### 클래수 구조_01
 
 위치 인자는 반드시 작성
 

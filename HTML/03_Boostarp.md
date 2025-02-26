@@ -1,53 +1,201 @@
-s<!DOCTYPE html>
-<html lang="en">
+# Bootstrap
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <style>
-    .box {
-        width: 200px;
-        height: 200px;
-    }
+CSS 프론트엔드 프레임워크(Toolkit)
 
-    .box-container {
-        width: 300px;
-    }
-    /* .be-success {
-        background-color: green;
-    } */
-  </style>
-</head>
+미리 만들어진 다양한 디자인 요소들을 제공하여 웹사이트를 빠르고 쉽게 개발할 수 있도록 함
 
-<body>
-  <h1>Hello Bootstrap!!</h1>
-  <h2>Heading 2</h2>
+## CDN(Content Delivery Network)
 
-  <div class="box bg-primary rounded-4">a box</div>
-  <div class="box-container m-3 p-4 border border-3 border-dark rounded-3 bg-secondary">
-    <div class="box mx-auto mb-3 bg-success rounded-circle"></div>
-    <div class="box mx-auto mb-3 bg-warning rounded-circle"></div>
-    <div class="box mx-auto bg-danger rounded-circle"></div>
-  </div>
+지리적 제약 없이 빠르고 안전하게 콘텐츠를 전송할 수 있는 전송 기술
+
+서버와 사용자 사이의 물리적인 거리를 줄여 콘텐츠 로딩에 소요되는 시간을 최소화(웹페이지 로드 속도를 높임)
+
+지리적으로 사용자와 가까운 CDN 서버에 콘텐츠를 저장해서 사용자에게 전달
+
+## 사용가이드
+
+### 기본 사용법
+
+```markup
+<p class= "mt-5">Hello, World!</p>
+```
+
+mt-5     {property}{sides}-{size}
+
+margin top - 5
+
+### Bootstrap에서 클래스 이름으로 spacing을 표현하는 방법
 
 
-  <div class="d.flex border border-3 border-dark rounded-3 justify-content-evenly">
-    <div class="box bg-success rounded-circle"></div>
-    <div class="box bg-warning rounded-circle"></div>
-    <div class="box bg-danger rounded-circle"></div>
+**[참고]**
 
-  </div>
+rem “root em”의 약자로, HTML 문서의 루트 요소의 폰트 크기를 기준으로 하는 상대적 단위
+
+- 루트 요소 기준
+    - 다른 상대 단위(`em` 등)는 부모 요소의 폰트 크기를 참조하지만, `rem`은 최상위 `html` 요소의 폰트 크기를 참조합니다.
+- 상대적 단위
+    - 루트 폰트 크기가 변경되면 모든 `rem` 값도 함께 변경됩니다.
+- 접근성
+    - 사용자가 브라우저에서 기본 글꼴 크기를 조정하면, 이에 따라 폰트 크기와 레이아웃도 유연하게 조정됩니다.
+- 일관성
+    - 트리 구조가 깊어지더라도, 폰트 크기가 의도치 않게 누적되어 변하지 않으므로 일관된 레이아웃을 유지하기 쉽습니다.
+
+### **3.2 계산 방법**
+
+- 대부분의 브라우저가 루트 폰트 크기를 **16px**로 기본 설정
+- `1rem = html` 요소의 폰트 크기 (대부분 16px)
+- 예시: 루트 폰트 크기가 16px일 때
+    - `2rem == 32px`
+    - `0.5rem == 8px`
+    - `1.5rem == 24px`
+
+### **3.3 사용 예시**
+
+```css
+html {
+  font-size: 16px;/* 브라우저 기본값 */
+}
+
+h1 {
+  font-size: 2rem;/* 2 * 16px = 32px */
+}
+
+p {
+  font-size: 1rem;/* 1 * 16px = 16px */padding: 1.5rem;/* 1.5 * 16px = 24px */margin: 0.5rem;/* 0.5 * 16px = 8px */
+}
+
+```
+
+### **3.4 rem vs em**
+
+| 단위 | 기준 | 특징 | 사용 예시 |
+| --- | --- | --- | --- |
+| rem | 루트 요소(`html`) 폰트 크기 | 트리 구조와 상관없이 항상 루트 폰트 크기를 기준으로 계산 | 전역적으로 일관된 크기를 유지해야 할 때 |
+| em | 부모 요소 폰트 크기 | 부모 요소 크기에 비례하여 변경, 중첩 시 계산이 복잡 | 부분적으로 상대 크기를 지정해야 할 때 |
+- **rem**은 깊은 트리 구조에서도 **일관된 크기 비율**을 유지하여 유지보수에 용이
+- **em**은 특정 요소 내부에서만 상대적인 크기 조정이 필요한 경우 활용할 수 있음
+
+### **3.5 rem 활용 분야**
+
+1. **폰트 크기**: 전역 폰트 크기를 기준으로 일정한 비율을 유지하고자 할 때.
+2. **여백(margin, padding)**: 반응형 레이아웃에서 일관된 공간을 확보하고자 할 때.
+3. **너비와 높이**: 요소의 크기를 사용자 브라우저 환경(기본 폰트 설정 등)에 맞춰 유연하게 조절할 때.
+4. **테두리(border) 크기**: 시각적 요소들을 루트 폰트 크기에 맞춰 유기적으로 조정하고 싶을 때.
+5. **미디어 쿼리와 반응형 디자인**: 폰트 크기나 배치가 사용자 설정에 따라 자동으로 조정되어 접근성을 높일 수 있음.
+
+Bootstrap에는 특정한 규칙이 있는 클래스 이름으로 스타일 및 레이아웃이 미리 작성되어있음
+
+---
+
+# Reset CSS
+
+모든 HTML 요소 스타일을 일관된 기준으로 재설정하는 간결하고 압축된 규칙 세트
+
+→ HTML Element, Table, List 등의 요소들에 일관성 있게 스타일을 적용시키는 기본 단계
+
+→ 모든 브라우저는 user agent stylesheet를 갖고 있었지만 브라우저마다 상이해서 동일하게 보이게 만듦!
+
+## Normalize CSS
+
+Reset CSS 방법 중 대표적인 방법
+
+웹 표준 기준으로 브라우저 중 하나가 불일치 한다면 차이가 있는 브라우저를 수정하는 방법
+
+- 경우에 따라 IE 또는 EDGE 브라우저는 표준에 따라 수정할 수 없는 경우도 있는데 이 경우 IE 또는 EDGE의 스타일을 나머지 브라우저에 적용시킴
+
+---
+
+# Bootstrap 활용
+
+## Typography
+
+제목, 본문 텍스트, 목록 등
+
+### Display headings
+
+기존 Heading보다 더 눈에 띄는 제목이 필요할 경우(더 크고 약간 다른 스타일)
 
 
-  <!-- <div class="box bg-success rounded-circle"></div>
-  <div class="box bg-warning rounded-circle"></div>
-   <div class="box bg-danger rounded-circle"></div> -->
+### Inline text elements
 
-  <!--bootstrap js 적용하기-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <!-- <script src = "js/bootstrap.js></script>" -->
-</body>
+HTML inline 요소에 대한 스타일
 
-</html>
+
+### Lists
+
+HTML list 요소에 대한 스타일
+
+
+
+---
+
+# Colors
+
+## Bootstrap Color System
+
+Bootstrap이 지정하고 제공하는 색상 시스템
+
+Text, Border, Background 및 다양한 요소에 사용하는 Bootstrap의 색상 키워드
+
+빨-에러, 노-경고, 파-인포
+
+---
+
+# Component
+
+## Bootstrap Component
+
+Bootstrap에서 제공하는 UI 관련 요소 → 버튼, 네비게이션 바, 카드, 폼, 드롭다운 등
+
+### Component 이점
+
+일관된 디자인을 제공하여 웹사이트의 구성요소를 구축하는데 유용하게 활용
+
+### 대표 Component 사용
+
+- Alerts, Badges, Buttons, Cards, Navbar
+
+---
+
+# Semantic Web
+
+웹 데이터를 의미론적으로 구조화된 형태로 표현하는 방식
+
+## Semantic in HTML
+
+
+
+### HTML Semantic Element
+
+기본적인 모양과 기능 이외에 의미를 가지는 HTML 요소
+
+→ 검색엔진 및 개발자가 웹페이지 콘텐츠를 이해하기 쉽도록
+
+### 대표적인 Semantic Element
+
+- header, nav, main, article, section, aside, footer
+
+
+## Semantic in CSS
+
+### CSS 방법론
+
+CSS를 효율적이고 유지보수가 용이하게 작성하기 위한 일련의 가이드라인
+
+### OOCSS(Object Oriented CSS)
+
+객체 지향적 접근법을 적용하여 CSS를 구성하는 방법론
+
+[기본 원칙]
+
+- 구조와 스킨을 분리 : 구조와 스킨을 분리함으로써 재사용 가능성을 높임, 모든 버튼의 공통 구조를 정의 + 각각의 스킨(배경색과 폰트색상)을 정의
+
+
+
+- 컨테이너와 콘텐츠 분리
+
+ - 객체에 직접 적용하는 대신 객체를 둘러싸는 컨테이너에 스타일을 적용
+
+ - 스타일을 정의할 때 위치에 의존적인 스타일을 사용하지 않도록 함
+
+ - 콘텐츠를 다른 컨테이너로 이동시키거나 재배치할 때 스타일이 깨지는 것을 방지

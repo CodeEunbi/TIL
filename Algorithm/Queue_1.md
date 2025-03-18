@@ -164,7 +164,7 @@ def isFull():
 
        rear ← (rear+ 1) mod n;
 
-1. 그 인덱스에 해당하는 배열 원소 cQ[rear]에 item을 저장
+2. 그 인덱스에 해당하는 배열 원소 cQ[rear]에 item을 저장
 
 ```python
 def enQueue(item):

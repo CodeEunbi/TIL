@@ -446,7 +446,18 @@ Django 프로젝트 생성 전 루틴
     - template_name :  탬플릿 이름의 경로
     - context : 탬플릿에서 사용할 데이터(딕셔너리 타입으로 작성)
 
+# Python 패키지 설치 방법
 
+## 패키지 설치
+
+- Python 패키지 설치 시 버전 지정 방법
+
+| 명령어 예시 | 기호 | 의미 |
+| --- | --- | --- |
+| pip install SomePackage | (없음) | 최신 버전 설치(버전 지정 없음) |
+| pip install Somepackage==1.0.5 | == | 특정 버전만 정확히 설치 |
+| pip install Somepackage> = 1. 0. 4 | > =  | 최소 버전(1.0.4)이상을 설치(새 버전도 허용) |
+| pip install Somepackage~=1.0.4 | ~= | 호환 버전 이상(1.0.4 이상), 다음 마이너 버전 미만(ex. <1.1.0)으로 설치( 마이너 업데이트 허용, 메이저 업데이트는 제한) |
 
 ---
 
